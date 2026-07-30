@@ -1,5 +1,2 @@
 # workout-tracker
 a work out tracking web app still to be completed 
-
-Action: search_replace({"new_str":"  useEffect(() => {\n    // CRITICAL: If returning from Google OAuth, skip the /me check.\n    // AuthCallback exchanges the session_id and establishes the session first.\n    if (window.location.hash?.includes(\"session_id=\")) {\n      setLoading(false);\n      return;\n    }\n    api\n      .get(\"/auth/me\")\n      .then((res) => setUser(res.data))\n      .catch(() => {\n        localStorage.removeItem(\"fittrack_token\");\n        setUser(false);\n      })\n      .finally(() => setLoading(false));\n  }, []);","old_str":"  useEffect(() => {\n    const token = localStorage.getItem(\"fittrack_token\");\n    if (!token) {\n      setUser(false);\n      setLoading(false);\n      return;\n    }\n    api\n      .get(\"/auth/me\")\n      .then((res) => setUser(res.data))\n      .catch(() => {\n        localStorage.removeItem(\"fittrack_token\");\n        setUser(false);\n      })\n      .finally(() => setLoading(false));\n  }, []);","path":"/app/frontend/src/context/AuthContext.js"})
-Observation: Edit was successful.
